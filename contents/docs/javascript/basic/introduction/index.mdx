@@ -1,9 +1,63 @@
 ---
 title: JS Introduction
-description: Learn about JS Introduction.
-keywords: ["javascript", "introduction", "tutorial"]
+description: An introduction to JavaScript, the world's most popular programming language.
+keywords: ["javascript", "introduction", "web development"]
 ---
 
-# JS Introduction
+# JavaScript Introduction
 
-Coming soon...
+JavaScript is the world's most popular programming language. It is the language of the Web.
+
+## What is JavaScript?
+
+JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997.
+ECMA-262 is the official name of the standard. ECMAScript is the official name of the language.
+
+## JavaScript Versions
+
+- The original JavaScript versions (ES1, ES2, ES3) (1997-1999)
+- The first main revision ES5 (2009)
+- The second revision ES6 (2015)
+- The yearly additions (2016, 2017, 2018, 2019, 2020...)
+
+## JavaScript Can Change HTML Content
+
+One of many JavaScript HTML methods is `getElementById()`.
+
+The example below "finds" an HTML element (with id="demo"), and changes the element content (innerHTML) to "Hello JavaScript":
+
+```javascript
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+```
+
+## JavaScript Can Change HTML Attribute Values
+
+In this example JavaScript changes the value of the `src` (source) attribute of an `<img>` tag:
+
+```javascript
+document.getElementById("myImage").src = "pic_bulbon.gif";
+```
+
+## JavaScript Can Change HTML Styles (CSS)
+
+Changing the style of an HTML element, is a variant of changing an HTML attribute:
+
+```javascript
+document.getElementById("demo").style.fontSize = "35px";
+```
+
+## JavaScript Can Hide HTML Elements
+
+Hiding HTML elements can be done by changing the `display` style:
+
+```javascript
+document.getElementById("demo").style.display = "none";
+```
+
+## JavaScript Can Show HTML Elements
+
+Showing hidden HTML elements can also be done by changing the `display` style:
+
+```javascript
+document.getElementById("demo").style.display = "block";
+```
