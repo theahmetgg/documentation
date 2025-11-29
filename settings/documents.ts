@@ -2,106 +2,28 @@ import { Paths } from "@/lib/pageroutes"
 
 export const Documents: Paths[] = [
   {
-    heading: "Introduction",
-    title: "Basic Setup",
-    href: "/basic-setup",
+    title: "JavaScript",
+    href: "/javascript",
     items: [
       {
-        title: "Installation",
-        href: "/installation",
-      },
-      {
-        title: "Setup",
-        href: "/setup",
-      },
-      {
-        title: "Changelog",
-        href: "/changelog",
+        title: "String Methods",
+        href: "/string-methods",
       },
     ],
   },
   {
-    spacer: true,
+    title: "React",
+    href: "/react",
+    items: [],
   },
   {
-    title: "Navigation",
-    href: "/navigation",
-    heading: "Documents",
+    title: "Tailwind CSS",
+    href: "/tailwind",
+    items: [],
   },
   {
-    title: "Structure",
-    href: "/structure",
-    items: [
-      {
-        title: "Deep",
-        href: "/deep",
-        items: [
-          {
-            title: "Deeper",
-            href: "/deeper",
-            items: [
-              {
-                title: "Even deeper",
-                href: "/even-deeper",
-              },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-  {
-    spacer: true,
-  },
-  {
-    title: "Markdown",
-    href: "/markdown",
-    heading: "Components",
-    items: [
-      {
-        title: "Cards aa",
-        href: "/cards",
-      },
-      {
-        title: "Diagrams",
-        href: "/diagrams",
-      },
-      {
-        title: "Filetree",
-        href: "/filetree",
-      },
-      {
-        title: "Lists",
-        href: "/lists",
-      },
-      {
-        title: "Maths",
-        href: "/maths",
-      },
-      {
-        title: "Notes",
-        href: "/notes",
-      },
-      {
-        title: "Steps",
-        href: "/steps",
-      },
-      {
-        title: "Table",
-        href: "/table",
-      },
-      {
-        title: "Tabs",
-        href: "/tabs",
-      },
-    ],
-  },
-  {
-    spacer: true,
-  },
-  {
-    title: "JS String Methods",
-    href: "/javascript-string-methods",
-    heading: "Articles",
+    title: "Next.js",
+    href: "/nextjs",
+    items: [],
   },
 ]
