@@ -13,9 +13,9 @@ export const Documents: Paths[] = [
           {
             title: "JS Tutorial",
             href: "/tutorial",
-              noLink: true,
+            noLink: true,
             items: [
-              { title: "JS Tutorial", href: "/tutorial" },
+              { title: "JS Tutorial", href: "/" },
               { title: "JS Introduction", href: "/introduction" },
               { title: "JS Where To", href: "/where-to" },
               { title: "JS Output", href: "/output" },
