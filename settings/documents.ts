@@ -10,10 +10,17 @@ export const Documents: Paths[] = [
         href: "/basic",
         noLink: true,
         items: [
-          { title: "JS Tutorial", href: "/tutorial" },
-          { title: "JS Introduction", href: "/introduction" },
-          { title: "JS Where To", href: "/where-to" },
-          { title: "JS Output", href: "/output" },
+          {
+            title: "JS Tutorial",
+            href: "/tutorial",
+              noLink: true,
+            items: [
+              { title: "JS Tutorial", href: "/tutorial" },
+              { title: "JS Introduction", href: "/introduction" },
+              { title: "JS Where To", href: "/where-to" },
+              { title: "JS Output", href: "/output" },
+            ],
+          },
           { title: "JS Syntax", href: "/syntax" },
           { title: "JS Variables", href: "/variables" },
           { title: "JS Operators", href: "/operators" },
