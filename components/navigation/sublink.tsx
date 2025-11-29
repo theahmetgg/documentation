@@ -20,10 +20,26 @@ function isRoute(
 }
 
 export default function SubLink(
-  props: Paths & { level: number; isSheet: boolean }
+  props: Paths & {
+    level: number
+    isSheet: boolean
+    isOpen?: boolean
+    onOpenChange?: (open: boolean) => void
+  }
 ) {
   const path = usePathname()
-  const [isOpen, setIsOpen] = useState(true)
+  const { isOpen: propsIsOpen, onOpenChange } = props
+  const [internalIsOpen, setInternalIsOpen] = useState(false)
+  const [openChild, setOpenChild] = useState<string | null>(null)
+
+  const isOpen = propsIsOpen !== undefined ? propsIsOpen : internalIsOpen
+  const setIsOpen = (open: boolean) => {
+    if (onOpenChange) {
+      onOpenChange(open)
+    } else {
+      setInternalIsOpen(open)
+    }
+  }
 
   useEffect(() => {
     if (
@@ -33,6 +49,20 @@ export default function SubLink(
       path.includes(props.href)
     ) {
       setIsOpen(true)
+    }
+  }, [path, props])
+
+  // Initialize openChild based on current path
+  useEffect(() => {
+    if (isRoute(props) && props.items) {
+      const activeChild = props.items.find(
+        (item) =>
+          isRoute(item) &&
+          path.includes(`${props.href}${item.href}`)
+      )
+      if (activeChild && isRoute(activeChild)) {
+        setOpenChild(`${props.href}${activeChild.href}`)
+      }
     }
   }, [path, props])
 
@@ -97,7 +127,22 @@ export default function SubLink(
                 isSheet,
               }
 
-              return <SubLink key={modifiedItems.href} {...modifiedItems} />
+              const childHref = modifiedItems.href
+
+              return (
+                <SubLink
+                  key={childHref}
+                  {...modifiedItems}
+                  isOpen={openChild === childHref}
+                  onOpenChange={(open) => {
+                    if (open) {
+                      setOpenChild(childHref)
+                    } else if (openChild === childHref) {
+                      setOpenChild(null)
+                    }
+                  }}
+                />
+              )
             })}
           </div>
         </CollapsibleContent>

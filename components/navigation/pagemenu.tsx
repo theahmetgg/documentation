@@ -1,12 +1,27 @@
 "use client"
 
 import { usePathname } from "next/navigation"
+import { useState, useEffect } from "react"
 
 import { Routes } from "@/lib/pageroutes"
 import SubLink from "@/components/navigation/sublink"
 
 export default function PageMenu({ isSheet = false }) {
   const pathname = usePathname()
+  const [openItem, setOpenItem] = useState<string | null>(null)
+
+  useEffect(() => {
+    const activeRoute = Routes.find(
+      (item) =>
+        !('spacer' in item) &&
+        item.href &&
+        pathname.includes(`/docs${item.href}`)
+    )
+    if (activeRoute && !('spacer' in activeRoute)) {
+      setOpenItem(`/docs${activeRoute.href}`)
+    }
+  }, [pathname])
+
   if (!pathname.startsWith("/docs")) return null
 
   return (
@@ -19,6 +34,9 @@ export default function PageMenu({ isSheet = false }) {
             </div>
           )
         }
+
+        const href = `/docs${item.href}`
+
         return (
           <div key={item.title + index} className="mb-2">
             {item.heading && (
@@ -27,9 +45,17 @@ export default function PageMenu({ isSheet = false }) {
             <SubLink
               {...{
                 ...item,
-                href: `/docs${item.href}`,
+                href: href,
                 level: 0,
                 isSheet,
+                isOpen: openItem === href,
+                onOpenChange: (open) => {
+                  if (open) {
+                    setOpenItem(href)
+                  } else if (openItem === href) {
+                    setOpenItem(null)
+                  }
+                },
               }}
             />
           </div>
