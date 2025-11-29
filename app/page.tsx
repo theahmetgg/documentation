@@ -1,32 +1,23 @@
-// import { Link } from "lib/transition"
-
-// import { PageRoutes } from "@/lib/pageroutes"
-// import { buttonVariants } from "@/components/ui/button"
-
-// export default function Home() {
-//   return (
-//     <section className="flex min-h-[86.5vh] flex-col items-center justify-center px-2 py-8 text-center">
-//       <h1 className="mb-4 text-4xl font-bold sm:text-7xl">Documents</h1>
-//       <p className="text-foreground mb-8 max-w-[600px] sm:text-base">
-//         A simple open-source product documentation platform. That&apos;s simple
-//         to use and easy to customize.
-//       </p>
-
-//       <div className="flex items-center gap-5">
-//         <Link
-//           href={`/docs${PageRoutes[0].href}`}
-//           className={buttonVariants({ className: "px-6", size: "lg" })}
-//         >
-//           Get Started
-//         </Link>
-//       </div>
-//     </section>
-//   )
-// }
-
-import { redirect } from "next/navigation"
-import { PageRoutes } from "@/lib/pageroutes"
+import { buttonVariants } from "@/components/ui/button"
+import Link from "next/link"
 
 export default function Home() {
-  redirect(`/docs${PageRoutes[0].href}`)
+  return (
+    <div className="flex min-h-[80vh] flex-col items-center justify-center text-center">
+      <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-6xl">
+        Documentation
+      </h1>
+      <p className="mb-8 max-w-[600px] text-lg text-muted-foreground">
+        Welcome to the documentation. You can access the articles and tutorials from the menu on the left.
+      </p>
+      <div className="flex gap-4">
+        <Link
+          href="/docs/javascript/basic/tutorial"
+          className={buttonVariants({ size: "lg" })}
+        >
+          Start Learning
+        </Link>
+      </div>
+    </div>
+  )
 }

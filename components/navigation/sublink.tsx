@@ -41,30 +41,31 @@ export default function SubLink(
     }
   }
 
-  useEffect(() => {
-    if (
-      isRoute(props) &&
-      props.href &&
-      path !== props.href &&
-      path.includes(props.href)
-    ) {
-      setIsOpen(true)
-    }
-  }, [path, props])
+  // Auto-expansion disabled as per user request
+  // useEffect(() => {
+  //   if (
+  //     isRoute(props) &&
+  //     props.href &&
+  //     path !== props.href &&
+  //     path.includes(props.href)
+  //   ) {
+  //     setIsOpen(true)
+  //   }
+  // }, [path, props])
 
   // Initialize openChild based on current path
-  useEffect(() => {
-    if (isRoute(props) && props.items) {
-      const activeChild = props.items.find(
-        (item) =>
-          isRoute(item) &&
-          path.includes(`${props.href}${item.href}`)
-      )
-      if (activeChild && isRoute(activeChild)) {
-        setOpenChild(`${props.href}${activeChild.href}`)
-      }
-    }
-  }, [path, props])
+  // useEffect(() => {
+  //   if (isRoute(props) && props.items) {
+  //     const activeChild = props.items.find(
+  //       (item) =>
+  //         isRoute(item) &&
+  //         path.includes(`${props.href}${item.href}`)
+  //     )
+  //     if (activeChild && isRoute(activeChild)) {
+  //       setOpenChild(`${props.href}${activeChild.href}`)
+  //     }
+  //   }
+  // }, [path, props])
 
   if (!isRoute(props)) {
     return null

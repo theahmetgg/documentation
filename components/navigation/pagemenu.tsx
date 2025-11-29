@@ -9,18 +9,18 @@ import SubLink from "@/components/navigation/sublink"
 export default function PageMenu({ isSheet = false }) {
   const pathname = usePathname()
   const [openItem, setOpenItem] = useState<string | null>(null)
-
-  useEffect(() => {
-    const activeRoute = Routes.find(
-      (item) =>
-        !('spacer' in item) &&
-        item.href &&
-        pathname.includes(`/docs${item.href}`)
-    )
-    if (activeRoute && !('spacer' in activeRoute)) {
-      setOpenItem(`/docs${activeRoute.href}`)
-    }
-  }, [pathname])
+  // Auto-expansion disabled as per user request
+  // useEffect(() => {
+  //   const activeRoute = Routes.find(
+  //     (item) =>
+  //       !('spacer' in item) &&
+  //       item.href &&
+  //       pathname.includes(`/docs${item.href}`)
+  //   )
+  //   if (activeRoute && !('spacer' in activeRoute)) {
+  //     setOpenItem(`/docs${activeRoute.href}`)
+  //   }
+  // }, [pathname])
 
   if (!pathname.startsWith("/docs")) return null
 
