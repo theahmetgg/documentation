@@ -8,6 +8,7 @@ export const Documents: Paths[] = [
       {
         title: "Basic JavaScript",
         href: "/basic",
+        noLink: true,
         items: [
           { title: "Tutorial", href: "/tutorial" },
           { title: "Introduction", href: "/introduction" },
@@ -41,6 +42,7 @@ export const Documents: Paths[] = [
       {
         title: "JS Advanced",
         href: "/advanced",
+        noLink: true,
         items: [
           { title: "Functions", href: "/functions" },
           { title: "Objects", href: "/objects" },
