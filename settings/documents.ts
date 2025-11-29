@@ -96,4 +96,12 @@ export const Documents: Paths[] = [
       },
     ],
   },
+  {
+    spacer: true,
+  },
+  {
+    title: "JS String Methods",
+    href: "/javascript-string-methods",
+    heading: "Articles",
+  },
 ]

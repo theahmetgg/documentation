@@ -1,0 +1,130 @@
+---
+title: 13 Most Common JavaScript String Methods
+description: A guide to the 13 most essential JavaScript string methods every developer should know.
+keywords: ["javascript", "string methods", "coding", "web development"]
+---
+
+JavaScript provides a rich set of built-in methods for manipulating strings, enabling developers to perform various operations like searching, extracting, and modifying text. Here are 13 of the most common and useful JavaScript string methods you should know about.
+
+## 1. length
+
+The `length` property returns the number of characters in a string, including spaces and punctuation. It is a property, not a method, but it is fundamental for string manipulation.
+
+```javascript
+const str = "Hello World";
+console.log(str.length); // Output: 11
+```
+
+## 2. charAt()
+
+This method returns the character at a specified index (position) within a string. The index is zero-based, meaning the first character is at index 0.
+
+```javascript
+const str = "Hello";
+console.log(str.charAt(0)); // Output: "H"
+console.log(str.charAt(4)); // Output: "o"
+```
+
+## 3. concat()
+
+The `concat()` method combines two or more strings into one new string. It returns a new string and does not modify the original strings.
+
+```javascript
+const str1 = "Hello";
+const str2 = "World";
+console.log(str1.concat(" ", str2)); // Output: "Hello World"
+```
+
+## 4. includes()
+
+The `includes()` method determines whether a string contains a specified substring. It returns `true` if the substring is found and `false` otherwise. This method is case-sensitive.
+
+```javascript
+const str = "Hello World";
+console.log(str.includes("World")); // Output: true
+console.log(str.includes("world")); // Output: false
+```
+
+## 5. indexOf()
+
+The `indexOf()` method returns the index of the first occurrence of a specified substring within a string. If the substring is not found, it returns `-1`.
+
+```javascript
+const str = "Hello World";
+console.log(str.indexOf("o")); // Output: 4
+console.log(str.indexOf("x")); // Output: -1
+```
+
+## 6. replace()
+
+This method searches a string for a specified value or a regular expression and replaces the first occurrence (or all if a global flag is used with a regex) with another specified value. It returns a new string, leaving the original string unchanged.
+
+```javascript
+const str = "Hello World";
+console.log(str.replace("World", "JavaScript")); // Output: "Hello JavaScript"
+```
+
+## 7. slice()
+
+The `slice()` method extracts a portion of a string and returns it as a new string. It takes two parameters: a start position and an optional end position (the character at the end position is not included). Negative parameters can be used to specify the position from the end of the string.
+
+```javascript
+const str = "Hello World";
+console.log(str.slice(0, 5)); // Output: "Hello"
+console.log(str.slice(-5));   // Output: "World"
+```
+
+## 8. split()
+
+The `split()` method divides a string into an ordered list of substrings, places these substrings into an array, and returns the array. The division is done by searching for a pattern (separator) provided as the first argument.
+
+```javascript
+const str = "Hello World";
+console.log(str.split(" ")); // Output: ["Hello", "World"]
+```
+
+## 9. substring()
+
+Similar to `slice()`, `substring()` extracts characters from a string between two specified indices. A key difference is that `substring()` cannot accept negative indices; it treats negative arguments as 0.
+
+```javascript
+const str = "Hello World";
+console.log(str.substring(0, 5)); // Output: "Hello"
+```
+
+## 10. toLowerCase()
+
+This method converts all the alphabetic characters in a string to lowercase. Non-alphabetic characters remain unchanged.
+
+```javascript
+const str = "Hello World";
+console.log(str.toLowerCase()); // Output: "hello world"
+```
+
+## 11. toUpperCase()
+
+The `toUpperCase()` method converts all the alphabetic characters in a string to uppercase. Similar to `toLowerCase()`, non-alphabetic characters are not affected.
+
+```javascript
+const str = "Hello World";
+console.log(str.toUpperCase()); // Output: "HELLO WORLD"
+```
+
+## 12. trim()
+
+The `trim()` method removes whitespace (spaces, tabs, and newline characters) from both ends (beginning and end) of a string. It returns a new string without modifying the original.
+
+```javascript
+const str = "   Hello World   ";
+console.log(str.trim()); // Output: "Hello World"
+```
+
+## 13. startsWith() / endsWith()
+
+These methods check whether a string begins or ends with a specified substring, respectively. Both methods return a boolean value (`true` or `false`).
+
+```javascript
+const str = "Hello World";
+console.log(str.startsWith("Hello")); // Output: true
+console.log(str.endsWith("World"));   // Output: true
+```
